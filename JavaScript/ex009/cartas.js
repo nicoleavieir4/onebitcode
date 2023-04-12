@@ -1,15 +1,13 @@
 const prompt = require("prompt-sync")();
 
-const init = +prompt("Digite quantas cartas o baralho possui atualmente: ");
-
-const qtdCartas = prompt(`Atualmente o baralho possui ${init} cartas.`);
-console.log(qtdCartas);
-
 const cartas = [];
+const qtdCartas = prompt(`Atualmente o baralho possui ${cartas} cartas.`);
+console.log(qtdCartas);
 
 do {
   pilha = prompt(
-    "Selecione uma das opções abaixo:" +
+    "Cartas no baralho: " +
+      cartas.length +
       "\n1 - Adicionar uma nova carta" +
       "\n2 - Puxar uma nova carta" +
       "\n3 - Sair "
@@ -17,14 +15,18 @@ do {
 
   switch (pilha) {
     case "1":
-      const adicionar = cartas.unshift(
+      const adicionar = cartas.push(
         prompt("Qual carta você deseja adicionar?")
       );
       console.log(`Você adicionou a carta ${adicionar} ao baralho.`);
       break;
     case "2":
-      const puxarCarta = cartas.shift();
-      console.log(`Você puxou a carta ${puxarCarta}.`);
+      const puxarCarta = cartas.pop();
+      if (!puxarCarta) {
+        console.log("Não há nenhuma carta no baralho!");
+      } else {
+        console.log(`Você puxou a carta ${puxarCarta}.`);
+      }
       break;
     case "3":
       console.log("Você escolheu sair. O programa será encerrado!");
