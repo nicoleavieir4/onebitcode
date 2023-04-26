@@ -1,5 +1,5 @@
 function createLabel(text, htmlFor) {
-  const label = document.createElement("label");
+  const label = document.createElement("label"); // retorna um objeto com as propriedades htmlFor e innerText
   label.htmlFor = htmlFor;
   label.innerText = text;
   return label;
