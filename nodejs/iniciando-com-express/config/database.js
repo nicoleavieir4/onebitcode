@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 
 mongoose
   .connect("mongodb://localhost/todo-list", {
-    useNewUrlParses: true,
+    useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("Conectado ao MongoDB"))
