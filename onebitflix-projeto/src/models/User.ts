@@ -72,3 +72,4 @@ export const User = database.define<UserInstance, User>(
   }
 );
 
+
